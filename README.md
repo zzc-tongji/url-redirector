@@ -30,7 +30,7 @@ China mainland IP List is updated from [here](https://raw.githubusercontent.com/
 
 ### Thanks
 
-Thanks @17mon for providing [china_ip_list](https://github.com/17mon/china_ip_list).
+Thanks [17mon](https://github.com/17mon) for providing [china_ip_list](https://github.com/17mon/china_ip_list).
 
 ### Others
 

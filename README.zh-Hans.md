@@ -30,7 +30,7 @@
 
 ### 致谢
 
-感谢 @17mon 提供 [china_ip_list](https://github.com/17mon/china_ip_list) 。
+感谢 [17mon](https://github.com/17mon) 提供 [china_ip_list](https://github.com/17mon/china_ip_list) 。
 
 ###  其他
 
