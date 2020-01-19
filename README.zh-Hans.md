@@ -1,5 +1,7 @@
 # url-redirector
 
+[English](./README.md)
+
 ### 简介
 
 根据访问 IP 是否来自中国大陆，重定向到不同的 URL 。

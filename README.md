@@ -1,5 +1,7 @@
 # url-redirector
 
+[简体中文](./README.zh-Hans.md)
+
 ### Introduction
 
 Redirect to another URL based on whether source IP comes from the mainland of china.
