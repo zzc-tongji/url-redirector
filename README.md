@@ -30,8 +30,9 @@ Config file `./config.json` :
 #### General
 
 ``` bash
+$ git clone https://github.com/zzc-tongji/url-redirector.git
+$ cd url-redirector
 $ npm install
-
 $ npm start
 ```
 
@@ -39,8 +40,7 @@ $ npm start
 
 ``` bash
 $ docker pull sulfonamide/url-redirector
-
-$ docker run -d --name [container name] -v [host: path to config.json]:/usr/src/app/config.json -p [host: listening port]:[docker: listening port defined by config.json] sulfonamide/url-redirector
+$ docker run --restart=always -d --name [container name] -v [host: path to config.json]:/usr/src/app/config.json -p [host: listening port]:[docker: listening port defined by config.json] sulfonamide/url-redirector
 ```
 
 ### China mainland IP List
