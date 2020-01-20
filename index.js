@@ -64,7 +64,7 @@ app.get(
         break;
       }
     }
-    res.redirect(config['status-code'], chinaMainlandIp ? config['china-mainland-ip'] : config['non-china-mainland-ip'] + req.path);
+    res.redirect(config['status-code'], chinaMainlandIp ? config['china-mainland-ip'] : config['non-china-mainland-ip'] + req.url);
   }
 );
 
