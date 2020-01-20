@@ -19,6 +19,7 @@ const refreshChinaIpListPath = () => {
   }
   fs.writeFileSync(chinaMainlandIpListPath, content, 'utf8');
   chinaMainlandIpList = content.split('\n');
+  console.log();
   console.log(`Refresh China mainland IP list at ${Date()}.`);
   console.log();
 };
@@ -58,12 +59,14 @@ app.get(
   '*',
   (req, res) => {
     let chinaMainlandIp = false;
+    const sourceIp = req.get('X-Real-IP') ? req.get('X-Real-IP') /* nginx */ : req.ip;
     for (let subnet of chinaMainlandIpList) {
-      if (ip.cidrSubnet(subnet).contains(req.ip)) {
+      if (ip.cidrSubnet(subnet).contains(sourceIp)) {
         chinaMainlandIp = true;
         break;
       }
     }
+    console.log(`${sourceIp} - ${chinaMainlandIp ? '' : 'not'} from the mainland of China`);
     res.redirect(config['status-code'], chinaMainlandIp ? config['china-mainland-ip'] : config['non-china-mainland-ip'] + req.url);
   }
 );
