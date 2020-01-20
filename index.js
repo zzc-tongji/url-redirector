@@ -36,8 +36,8 @@ try {
 } catch (error) {
   config = {
     'port': 80,
-    'china-mainland-ip': 'https://www.baidu.com/',
-    'non-china-mainland-ip': 'https://www.google.com/',
+    'china-mainland-ip': 'https://www.baidu.com',
+    'non-china-mainland-ip': 'https://www.google.com',
     'status-code': 302
   };
   fs.writeFile(configPath, JSON.stringify(config, null, '  '), 'utf8', () => { });

@@ -1,6 +1,6 @@
 {
   "port": 80,
-  "china-ip": "https://www.baidu.com/",
-  "non-china-ip": "https://www.google.com/",
+  "china-ip": "https://www.baidu.com",
+  "non-china-ip": "https://www.google.com",
   "status-code": 302
 }
