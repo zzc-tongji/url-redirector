@@ -43,6 +43,16 @@ $ docker pull sulfonamide/url-redirector
 $ docker run --restart=always -d --name [container name] -v [host: path to config.json]:/usr/src/app/config.json -p [host: listening port]:[docker: listening port defined by config.json] sulfonamide/url-redirector
 ```
 
+#### NGINX 反向代理
+
+如果使用 NGINX，请将下列内容添加至 NGINX 配置文件，以便 `url-redirector` 获取真实的访问 IP 。
+
+```
+proxy_set_header    Host               $host;
+proxy_set_header    X-Real-IP          $remote_addr;
+proxy_set_header    X-Forwarded-For    $proxy_add_x_forwarded_for;
+```
+
 ### 中国大陆 IP 列表
 
 中国大陆 IP 列表，每15天从[这里](https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt)更新一次。

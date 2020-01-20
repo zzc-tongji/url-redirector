@@ -43,6 +43,16 @@ $ docker pull sulfonamide/url-redirector
 $ docker run --restart=always -d --name [container name] -v [host: path to config.json]:/usr/src/app/config.json -p [host: listening port]:[docker: listening port defined by config.json] sulfonamide/url-redirector
 ```
 
+#### NGINX Reverse Proxy
+
+If NGINX is used, add following contents to NGINX config in order to deliver real source IP address to `url-redirector`.
+
+```
+proxy_set_header    Host               $host;
+proxy_set_header    X-Real-IP          $remote_addr;
+proxy_set_header    X-Forwarded-For    $proxy_add_x_forwarded_for;
+```
+
 ### China mainland IP List
 
 China mainland IP List is updated from [here](https://raw.githubusercontent.com/17mon/china_ip_list/master/china_ip_list.txt) every 15 days.
