@@ -13,8 +13,8 @@
 ``` json
 {
   "port": 80,
-  "china-mainland-ip": "https://www.baidu.com/",
-  "non-china-mainland-ip": "https://www.google.com/",
+  "china-mainland-ip": "https://www.baidu.com",
+  "non-china-mainland-ip": "https://www.google.com",
   "status-code": 302
 }
 ```
@@ -23,6 +23,25 @@
 - 配置项 `china-mainland-ip`: 访问 IP 来自中国大陆，跳转到这里。
 - 配置项 `not-china-mainland-ip`: 访问 IP 来自中国大陆以外的地区，跳转到这里。
 - 配置项 `status-code`: HTTP 状态码，应当为 `3xx` 。
+- 请注意：URL 不要以 `/` 结尾。
+
+### 运行
+
+#### 常规
+
+``` bash
+$ npm install
+
+$ npm start
+```
+
+#### Docker
+
+``` bash
+$ docker pull sulfonamide/url-redirector
+
+$ docker run -d --name [container name] -v [host: path to config.json]:/usr/src/app/config.json -p [host: listening port]:[docker: listening port defined by config.json] sulfonamide/url-redirector
+```
 
 ### 中国大陆 IP 列表
 

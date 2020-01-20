@@ -13,16 +13,35 @@ Config file `./config.json` :
 ``` json
 {
   "port": 80,
-  "china-mainland-ip": "https://www.baidu.com/",
-  "non-china-mainland-ip": "https://www.google.com/",
+  "china-mainland-ip": "https://www.baidu.com",
+  "non-china-mainland-ip": "https://www.google.com",
   "status-code": 302
 }
 ```
 
 - item `port`: indicate which port to listen.
-- item `china-mainland-ip`: indicate the url to jump when source IP comes from the mainland of china.
-- item `not-china-mainland-ip`: indicate the url to jump when source IP does not come from the mainland of china.
+- item `china-mainland-ip`: indicate the URL to jump when source IP comes from the mainland of china.
+- item `not-china-mainland-ip`: indicate the URL to jump when source IP does not come from the mainland of china.
 - item `status-code`: indicate which HTTP status code to use, it should be `3xx`.
+- Please note: URLs should not end with `/`.
+
+### Run
+
+#### General
+
+``` bash
+$ npm install
+
+$ npm start
+```
+
+#### Docker
+
+``` bash
+$ docker pull sulfonamide/url-redirector
+
+$ docker run -d --name [container name] -v [host: path to config.json]:/usr/src/app/config.json -p [host: listening port]:[docker: listening port defined by config.json] sulfonamide/url-redirector
+```
 
 ### China mainland IP List
 
