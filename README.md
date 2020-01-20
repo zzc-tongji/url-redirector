@@ -4,7 +4,7 @@
 
 ### Introduction
 
-Redirect to another URL based on whether source IP comes from the mainland of china.
+Redirect to another URL based on whether source IP comes from the mainland of China.
 
 ### Config
 
