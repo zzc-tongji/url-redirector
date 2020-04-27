@@ -12,7 +12,7 @@
     "url": "git+https://github.com/zzc-tongji/url-redirector.git"
   },
   "author": "Zhicheng Zhang",
-  "license": "MIT",
+  "license": "Apache-2.0",
   "bugs": {
     "url": "https://github.com/zzc-tongji/url-redirector/issues"
   },
